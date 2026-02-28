@@ -1,0 +1,711 @@
+{
+  "info": {
+    "_postman_id": "c252ef99-c306-42a4-b9fd-48d6da3ac815",
+    "name": "Microservices Lab",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Return list of all items",
+      "id": "fbd83e2f-cda5-4ebb-831e-9eb5ebcb8e3c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Headphones\" \r\n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/items",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "items"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "0c57dce6-ea45-4c39-a2cc-72d913c9681e",
+          "name": "Return list of all items",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Headphones\" \r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/items",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "items"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:02:14 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    \"Book\",\n    \"Laptop\",\n    \"Phone\"\n]"
+        }
+      ]
+    },
+    {
+      "name": "Create a new item",
+      "id": "8c1f3088-4451-41e6-a240-5213de0d6807",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Headphones\" \r\n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/items",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "items"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "ae434c0f-b80f-495e-8a6c-0e9b78b523c1",
+          "name": "Create a new item",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Headphones\" \r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "items"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "44"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:07:32 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "Item added: {\r\n    \"name\": \"Headphones\" \r\n} "
+        }
+      ]
+    },
+    {
+      "name": "Get item by id",
+      "id": "ffeee5ed-6629-48ac-a14c-c6278e1741dc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Headphones\" \r\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/items/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "items",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "9692a434-f248-4bf9-8c97-dada6c282f2e",
+          "name": "Get item by id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Headphones\" \r\n} "
+            },
+            "url": {
+              "raw": "http://localhost:8080/items/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "items",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "6"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:08:50 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "Laptop"
+        }
+      ]
+    },
+    {
+      "name": "Return all orders",
+      "id": "8c63f670-6f43-4501-9339-e625fb07cfd1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Headphones\" \r\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "22ce0a19-a0eb-488c-837f-613aee21cda8",
+          "name": "Return all orders",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Headphones\" \r\n} "
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:11:36 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"item\": \"Laptop\",\n        \"quantity\": 2,\n        \"customerId\": \"C001\",\n        \"id\": 1,\n        \"status\": \"PENDING\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Place a new order",
+      "id": "55dfa33c-716b-43d8-9541-385b55b2c469",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "3b422b06-6d7f-4bf1-bf2e-ab5b743cb7d7",
+          "name": "Place a new order",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:10:58 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"item\": \"Laptop\",\n    \"quantity\": 2,\n    \"customerId\": \"C001\",\n    \"id\": 1,\n    \"status\": \"PENDING\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get order by id",
+      "id": "30d019f5-e91f-49ac-987c-40b45b2d36b8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "7d431404-9dbf-4125-a376-7996de06b231",
+          "name": "Get order by id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:12:53 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"item\": \"Laptop\",\n    \"quantity\": 2,\n    \"customerId\": \"C001\",\n    \"id\": 1,\n    \"status\": \"PENDING\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Return all payments",
+      "id": "47a61f0f-a176-4db9-b8db-83e7e02ba964",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/payments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "payments"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "95a098a0-2aca-4a69-802f-27c9bb1c1d73",
+          "name": "Return all payments",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/payments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "payments"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:16:17 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"orderId\": 1,\n        \"amount\": 1299.99,\n        \"method\": \"CARD\",\n        \"id\": 1,\n        \"status\": \"SUCCESS\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Process a payment",
+      "id": "5f92936b-da51-4061-a2ea-792c0cee43ab",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"orderId\": 1, \r\n    \"amount\": 1299.99, \r\n    \"method\": \"CARD\" \r\n} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/payments/process",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "payments",
+            "process"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "852eab68-c121-42c7-93cb-98bb61c64ba8",
+          "name": "Process a payment",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderId\": 1, \r\n    \"amount\": 1299.99, \r\n    \"method\": \"CARD\" \r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/payments/process",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "payments",
+                "process"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:15:56 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"orderId\": 1,\n    \"amount\": 1299.99,\n    \"method\": \"CARD\",\n    \"id\": 1,\n    \"status\": \"SUCCESS\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get payment status",
+      "id": "3cf82406-125d-4c32-ae57-3cc52f574768",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/payments/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "payments",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "8aceb6a1-277b-4594-87fc-e3d0bfa5dc0f",
+          "name": "Get payment status",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"item\": \"Laptop\", \r\n    \"quantity\": 2, \r\n    \"customerId\": \"C001\" \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/payments/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "payments",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 28 Feb 2026 16:17:09 GMT"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"orderId\": 1,\n    \"amount\": 1299.99,\n    \"method\": \"CARD\",\n    \"id\": 1,\n    \"status\": \"SUCCESS\"\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "5029d7dc-356e-468a-8c79-8119de6508e3",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "4a27b2e1-5fc2-47a9-b296-5215304063da",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "69b95e55-5d16-4586-a8f0-493cd2dc71ce",
+      "key": "baseURL",
+      "value": "",
+      "disabled": true
+    }
+  ]
+}
